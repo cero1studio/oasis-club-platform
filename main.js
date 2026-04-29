@@ -125,11 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="category">Selección Oasis</span>
                     <h3>${p.name}</h3>
                     <p class="price">${p.price} COP</p>
-                    <div style="display: flex; gap: 0.5rem; margin-top: 1.5rem;">
-                        <a href="#" class="btn-action btn-add-cart" style="flex: 1.2; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <div class="product-btns">
+                        <a href="#" class="btn-action btn-add-cart">
                             <i data-lucide="shopping-cart" style="width: 14px;"></i> AÑADIR
                         </a>
-                        <a href="product-single.html" class="btn-outline" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <a href="product-single.html" class="btn-outline">
                             <i data-lucide="eye" style="width: 14px;"></i> DETALLE
                         </a>
                     </div>
