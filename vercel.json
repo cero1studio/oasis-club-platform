@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "name": "oasis-club-platform",
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/tienda", "dest": "/shop.html" },
+    { "src": "/membresia", "dest": "/membership.html" },
+    { "src": "/producto", "dest": "/product-single.html" },
+    { "src": "/checkout", "dest": "/checkout.html" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(png|jpg|jpeg|gif|webp|svg|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, immutable" }
+      ]
+    }
+  ]
+}
