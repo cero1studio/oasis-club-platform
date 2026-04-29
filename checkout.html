@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finaliza tu compra en Oasis Club de forma segura, con protección de datos y envío discreto a toda Colombia.">
+    <meta name="robots" content="noindex,follow">
+    <link rel="canonical" href="https://oasisclub.co/checkout/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Checkout Oasis Club | Pago Seguro">
+    <meta property="og:description" content="Completa tu pedido en Oasis Club con proceso seguro, privado y confiable.">
+    <meta property="og:url" content="https://oasisclub.co/checkout/">
+    <meta property="og:image" content="https://oasisclub.co/hero.png">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Finalizar Pedido | Oasis Club</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +40,7 @@
                         <input type="email" placeholder="tu@email.com">
                     </div>
                     
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="checkout-row-two">
                         <div class="form-group">
                             <label>Nombre</label>
                             <input type="text" placeholder="Como aparece en tu CC">
@@ -54,7 +63,7 @@
                             <label>Número de Tarjeta</label>
                             <input type="text" placeholder="0000 0000 0000 0000">
                         </div>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="checkout-row-two">
                             <div class="form-group">
                                 <label>Fecha Exp.</label>
                                 <input type="text" placeholder="MM/YY">
@@ -74,12 +83,14 @@
 
                 <!-- RESUMEN DEL PEDIDO -->
                 <div class="checkout-summary reveal delay-1">
-                    <div style="background: white; padding: 2.5rem; border-radius: 32px; position: sticky; top: 120px;">
+                    <div class="checkout-summary-card" style="background: white; padding: 2.5rem; border-radius: 32px;">
                         <h2 style="font-family: var(--font-heading); margin-bottom: 2rem; font-size: 1.5rem;">Tu Selección</h2>
                         
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f0f0f0;">
-                            <span>Combo Placer Total (Tienda)</span>
-                            <strong>$285.000</strong>
+                        <div id="checkout-items-list">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #f0f0f0;">
+                                <span>Combo Placer Total (Tienda)</span>
+                                <strong>$285.000</strong>
+                            </div>
                         </div>
                         
                         <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: #10b981;">
@@ -89,7 +100,7 @@
 
                         <div style="display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid var(--oasis-purple); font-size: 1.4rem; font-weight: 800;">
                             <span>Total</span>
-                            <span style="color: var(--oasis-purple);">$285.000</span>
+                            <span id="checkout-total" style="color: var(--oasis-purple);">$285.000</span>
                         </div>
 
                         <div style="margin-top: 3rem; background: #fdfcf0; padding: 1.5rem; border-radius: 16px; border: 1px solid var(--oasis-gold);">
@@ -103,30 +114,6 @@
         </div>
     </main>
 
-    <script>
-        // Lógica para detectar si es Plan o Producto
-        const params = new URLSearchParams(window.location.search);
-        const plan = params.get('plan');
-        const summaryItem = document.querySelector('.checkout-summary strong');
-        const summaryLabel = document.querySelector('.checkout-summary span');
-        const mainBtn = document.getElementById('main-checkout-btn');
-
-        if (plan) {
-            const plans = {
-                'creator': { name: 'Membresía Creator', price: '$97.000' },
-                'pareja': { name: 'Membresía Pareja Perfecto', price: '$105.000' },
-                'pro': { name: 'Membresía Socio Pro', price: '$128.000' }
-            };
-
-            if (plans[plan]) {
-                summaryLabel.innerText = plans[plan].name;
-                summaryItem.innerText = plans[plan].price;
-                document.querySelector('.checkout-summary span[style*="color: var(--oasis-purple)"]').innerText = plans[plan].price;
-                document.querySelector('.checkout-summary span[style*="color: var(--oasis-purple)"]').previousElementSibling.innerText = "Total Mensual";
-                mainBtn.innerText = "Activar mi Membresía Now";
-            }
-        }
-    </script>
     <script src="main.js"></script>
 </body>
 </html>
