@@ -427,6 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const imageEl = document.querySelector('.product-gallery img');
         const subtitleEl = document.querySelector('.product-meta .subtitle');
         const buyBtn = document.querySelector('.action-area .btn-add-cart');
+        const bundleBreakdown = document.querySelector('.bundle-breakdown');
         const detailCards = document.querySelectorAll('.section .product-grid .product-card');
 
         if (titleEl) titleEl.textContent = selected.name || 'Producto';
@@ -441,6 +442,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (subtitleEl) subtitleEl.textContent = `Boutique / ${selected.brand || 'Selección Oasis'}`;
         if (buyBtn) buyBtn.setAttribute('href', routeTo('checkout'));
+        if (bundleBreakdown) {
+            const name = String(selected.name || '').toLowerCase();
+            const isComboLike = ['combo', 'kit', 'caja', 'set'].some((word) => name.includes(word));
+            bundleBreakdown.style.display = isComboLike ? 'block' : 'none';
+        }
 
         if (detailCards.length > 0) {
             const related = products.filter((p) => p.id !== selected.id).slice(0, detailCards.length);
