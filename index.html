@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Club | Membresía y Sex Shop Elegante en Colombia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- SIDEBAR CART -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div class="cart-items">
+            <p class="empty-msg">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0 COP</span>
+            </div>
+            <a href="checkout.html" class="btn-primary" style="width: 100%; text-align: center;">Finalizar Pedido</a>
+        </div>
+    </div>
+    <nav id="main-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">OASIS CLUB</a>
+                <div class="slogan-nav">BIENESTAR & ELEGANCIA</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="membership.html">Membresía</a></li>
+                <li><a href="shop.html">Tienda / Boutique</a></li>
+                <li><a href="#" class="cart-icon"><i data-lucide="shopping-bag" style="width: 20px;"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SLIDER: ENFOQUE DUAL -->
+    <header class="hero-slider">
+        <div class="slides">
+            <!-- SLIDE 1: MEMBRESÍA -->
+            <div class="slide active" style="background-image: linear-gradient(rgba(59, 7, 100, 0.7), rgba(59, 7, 100, 0.7)), url('caja-oasis.png');">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="badge-new">Tu Compra Inteligente</span>
+                        <h1>Disfruta con Elegancia y Ahorro</h1>
+                        <p>Recibe cada mes una caja curada con productos de alta calidad por una fracción de su precio individual. La forma más inteligente de descubrir placer.</p>
+                        <div class="hero-btns">
+                            <a href="#planes" class="btn-primary">Ver Planes de Ahorro</a>
+                            <a href="#experiencia" class="btn-glass">¿Cómo ahorras?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SLIDE 2: BOUTIQUE -->
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('juguete.png');">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="badge-new">Selección Especial</span>
+                        <h1>Calidad en tus Manos</h1>
+                        <p>Explora nuestra boutique y elige productos de excelente calidad con una presentación impecable. La elegancia de comprar bien.</p>
+                        <div class="hero-btns">
+                            <a href="shop.html" class="btn-primary">Explorar Boutique</a>
+                            <a href="shop.html" class="btn-outline" style="border-color: white; color: white;">Ver Combos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+        <!-- SLIDER ARROWS -->
+        <div class="slider-arrows">
+            <button class="prev-slide">&lsaquo;</button>
+            <button class="next-slide">&rsaquo;</button>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: LA BOUTIQUE (TIENDA) -->
+    <section id="boutique" class="section shop-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">La Boutique</span>
+                <h2>Combos y Selección Especial</h2>
+                <p>Nuestros favoritos elegidos para ti, disponibles para llevar hoy mismo.</p>
+            </div>
+            
+            <div class="product-grid">
+                <!-- PRODUCTO 1 -->
+                <div class="product-card reveal">
+                    <a href="product-single.html" style="text-decoration: none; color: inherit;">
+                        <div class="product-img" style="background-image: url('caja-oasis.png');"></div>
+                    </a>
+                    <div class="product-info">
+                        <span class="category">Selección Oasis</span>
+                        <h3>Combo Placer Total</h3>
+                        <p class="price">$285.000 COP</p>
+                        <div class="product-btns">
+                            <a href="#" class="btn-action btn-add-cart">
+                                <i data-lucide="shopping-cart" style="width: 14px;"></i> AÑADIR
+                            </a>
+                            <a href="product-single.html" class="btn-outline">
+                                <i data-lucide="eye" style="width: 14px;"></i> DETALLE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCTO 2 -->
+                <div class="product-card reveal delay-1">
+                    <a href="product-single.html" style="text-decoration: none; color: inherit;">
+                        <div class="product-img" style="background-image: url('juguete.png');"></div>
+                    </a>
+                    <div class="product-info">
+                        <span class="category">Tecnología</span>
+                        <h3>Masajeador Aura Gold</h3>
+                        <p class="price">$245.000 COP</p>
+                        <div class="product-btns">
+                            <a href="#" class="btn-action btn-add-cart">
+                                <i data-lucide="shopping-cart" style="width: 14px;"></i> AÑADIR
+                            </a>
+                            <a href="product-single.html" class="btn-outline">
+                                <i data-lucide="eye" style="width: 14px;"></i> DETALLE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCTO 3 -->
+                <div class="product-card reveal delay-2">
+                    <a href="product-single.html" style="text-decoration: none; color: inherit;">
+                        <div class="product-img" style="background-image: url('seda.png');"></div>
+                    </a>
+                    <div class="product-info">
+                        <span class="category">Elegancia</span>
+                        <h3>Kit Seda de Medianoche</h3>
+                        <p class="price">$145.000 COP</p>
+                        <div style="display: flex; gap: 0.8rem; margin-top: 1.5rem;">
+                            <a href="#" class="btn-action btn-add-cart" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                <i data-lucide="shopping-cart" style="width: 14px;"></i> AÑADIR
+                            </a>
+                            <a href="product-single.html" class="btn-outline" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                                <i data-lucide="eye" style="width: 14px;"></i> DETALLE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCTO 4 -->
+                <div class="product-card reveal delay-3">
+                    <a href="product-single.html" style="text-decoration: none; color: inherit;">
+                        <div class="product-img" style="background-image: url('caja-oasis.png'); filter: hue-rotate(90deg);"></div>
+                    </a>
+                    <div class="product-info">
+                        <span class="category">Exclusivo</span>
+                        <h3>Caja Sorpresa Única</h3>
+                        <p class="price">$115.000 COP</p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1.5rem;">
+                            <a href="#" class="btn-action btn-add-cart" style="flex: 1.2; padding: 0.8rem 0; font-size: 0.7rem;">AÑADIR</a>
+                            <a href="product-single.html" class="btn-outline" style="flex: 1; padding: 0.8rem 0; font-size: 0.7rem; border-width: 1px;">DETALLE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-cta reveal">
+                <a href="shop.html" class="btn-outline">Ver toda la boutique</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: LA MEMBRESÍA (CAJA) -->
+    <section id="experiencia" class="section step-section" style="background: var(--bg-cream);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">Membresía Oasis</span>
+                <h2>¿Prefieres una sorpresa mensual?</h2>
+                <p>Nuestra caja de suscripción es la forma más inteligente de descubrir productos elegantes.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card reveal">
+                    <div class="step-num">01</div>
+                    <h3>Elegimos por ti</h3>
+                    <p>Cada mes seleccionamos productos de alta calidad para sorprenderte.</p>
+                </div>
+                <div class="step-card reveal delay-1">
+                    <div class="step-num">02</div>
+                    <h3>Ahorro Real</h3>
+                    <p>Recibes productos por un valor mucho mayor al precio de tu membresía.</p>
+                </div>
+                <div class="step-card reveal delay-2">
+                    <div class="step-num">03</div>
+                    <h3>Privacidad Total</h3>
+                    <p>Envío 100% discreto en una caja elegante que no revela su contenido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANES DE MEMBRESÍA -->
+    <section id="planes" class="planes-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">Planes</span>
+                <h2>Nuestras Cajas</h2>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <div class="plan-header">
+                        <span class="plan-name">PLAN CREATOR</span>
+                        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem;">Ideal para quienes quieren empezar a explorar y descubrir su propio ritmo.</p>
+                    </div>
+                    <div class="price-box">
+                        <span class="amount">$97.000</span>
+                        <span class="currency">COP / mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Selección de 2 productos</li>
+                        <li>Envío incluido</li>
+                        <li>Tips exclusivos</li>
+                    </ul>
+                    <a href="checkout.html?plan=creator" class="btn-action">Activar mi Membresía</a>
+                </div>
+
+                <div class="pricing-card featured reveal delay-1">
+                    <div class="badge-popular">EL FAVORITO</div>
+                    <div class="plan-header">
+                        <span class="plan-name">PAREJA PERFECTO</span>
+                        <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 0.5rem;">El balance perfecto para parejas que buscan salir de la rutina y reconectar.</p>
+                    </div>
+                    <div class="price-box">
+                        <span class="amount">$105.000</span>
+                        <span class="currency">COP / mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>3 Productos para compartir</li>
+                        <li>Acceso a comunidad</li>
+                        <li>Regalo sorpresa</li>
+                    </ul>
+                    <a href="checkout.html?plan=pareja" class="btn-action">Activar mi Membresía</a>
+                </div>
+
+                <div class="pricing-card reveal delay-2">
+                    <div class="plan-header">
+                        <span class="plan-name">ESTUDIO OASIS</span>
+                        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem;">Para exploradores expertos que buscan el máximo nivel de sofisticación y sorpresa.</p>
+                    </div>
+                    <div class="price-box">
+                        <span class="amount">$128.000</span>
+                        <span class="currency">COP / mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>La selección más premium</li>
+                        <li>Productos exclusivos</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <a href="checkout.html?plan=pro" class="btn-action">Unirse como Socio Pro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER COMPONENT -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo" style="margin-bottom: 1.5rem;">OASIS CLUB</div>
+                    <p style="font-size: 0.9rem; line-height: 1.8; opacity: 0.8; margin-bottom: 2rem;">
+                        La primera membresía de placer en Colombia diseñada para el bienestar y la elegancia.
+                    </p>
+                    <div class="trust-icons" style="display: flex; gap: 1.5rem; opacity: 0.6; margin-top: 2rem;">
+                        <i data-lucide="shield-check" title="Envío Discreto" style="width: 18px;"></i>
+                        <i data-lucide="lock" title="Pago Seguro" style="width: 18px;"></i>
+                        <i data-lucide="truck" title="Entrega Rápida" style="width: 18px;"></i>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Membresías</h4>
+                    <ul>
+                        <li><a href="membership.html">¿Cómo funciona?</a></li>
+                        <li><a href="membership.html#planes">Elegir mi Plan</a></li>
+                        <li><a href="membership.html">Preguntas Frecuentes</a></li>
+                        <li><a href="membership.html">Beneficios Socios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Boutique</h4>
+                    <ul>
+                        <li><a href="shop.html">Ver Tienda</a></li>
+                        <li><a href="#">Combos Oasis</a></li>
+                        <li><a href="#">Novedades</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col" style="grid-column: span 2;">
+                    <h4>Legal</h4>
+                    <ul class="footer-legal-links">
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Envíos y Devoluciones</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Oasis Club Colombia. Todos los derechos reservados.</p>
+                <div class="payment-methods">PAGOS: PSE • BANCOLOMBIA • VISA</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

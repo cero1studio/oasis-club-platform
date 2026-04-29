@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membresía Oasis | La Forma Inteligente de Descubrir Placer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- SIDEBAR CART -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button id="close-cart" class="close-btn"><i data-lucide="x"></i></button>
+        </div>
+        <div class="cart-items">
+            <p class="empty-msg">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0 COP</span>
+            </div>
+            <a href="checkout.html" class="btn-primary" style="width: 100%; text-align: center;">Finalizar Pedido</a>
+        </div>
+    </div>
+
+    <nav id="main-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">OASIS CLUB</a>
+                <div class="slogan-nav">BIENESTAR & ELEGANCIA</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="shop.html">Tienda</a></li>
+                <li><a href="#" class="cart-icon"><i data-lucide="shopping-bag" style="width: 20px;"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="membership-hero" style="background: var(--card-dark-grad); color: white; padding: 10rem 0; text-align: center;">
+        <div class="container">
+            <span class="badge-new" style="background: var(--oasis-gold); color: var(--oasis-purple);">Suscripción Inteligente</span>
+            <h1 style="font-family: var(--font-heading); font-size: 4rem; margin-top: 1rem;">Tu Bienestar, <br>Sin Pagar de Más</h1>
+            <p style="max-width: 600px; margin: 2rem auto; opacity: 0.8; font-size: 1.1rem;">Recibe una selección elegante de productos cada mes con un ahorro real de hasta el 40%. La forma más sofisticada de comprar con inteligencia.</p>
+            <a href="#planes" class="btn-primary">Ver Planes de Ahorro</a>
+        </div>
+    </header>
+
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="subtitle">¿Por qué Oasis?</span>
+                <h2>Beneficios de ser Socio</h2>
+            </div>
+            
+            <div class="features-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem;">
+                <div class="feature-item" style="text-align: center;">
+                    <div style="background: var(--bg-cream); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--oasis-purple);">
+                        <i data-lucide="trending-down" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 1rem;">Ahorro Garantizado</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Pagas un precio fijo mensual y recibes productos con un valor comercial muy superior. Tu bolsillo lo agradecerá.</p>
+                </div>
+                <div class="feature-item" style="text-align: center;">
+                    <div style="background: var(--bg-cream); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--oasis-purple);">
+                        <i data-lucide="shield-check" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 1rem;">Privacidad Absoluta</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Nuestros empaques son elegantes, discretos y no revelan el contenido. Solo tú sabrás lo que hay dentro.</p>
+                </div>
+                <div class="feature-item" style="text-align: center;">
+                    <div style="background: var(--bg-cream); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--oasis-purple);">
+                        <i data-lucide="sparkles" style="width: 40px; height: 40px;"></i>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 1rem;">Curaduría Experta</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.7;">Olvídate de buscar. Nuestros expertos seleccionan lo mejor del mercado para que cada mes sea una sorpresa perfecta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANES -->
+    <section id="planes" class="planes-section" style="background: var(--bg-cream);">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <span class="subtitle">Elige tu Nivel de Ahorro</span>
+                <h2>Nuestras Cajas Mensuales</h2>
+            </div>
+            
+            <div class="pricing-grid" style="margin-top: 5rem;">
+                <div class="pricing-card reveal">
+                    <div class="plan-header">
+                        <span class="plan-name">PLAN CREATOR</span>
+                        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem;">Ideal para explorar la calidad Oasis por primera vez.</p>
+                    </div>
+                    <div class="price-box">
+                        <span class="amount">$97.000</span>
+                        <span class="currency">COP / mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> 2 Productos de calidad</li>
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> Envío incluido</li>
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> Empaque discreto elegante</li>
+                    </ul>
+                    <a href="checkout.html?plan=creator" class="btn-action">Activar Ahorro</a>
+                </div>
+
+                <div class="pricing-card featured reveal delay-1">
+                    <div class="badge-popular">LA MEJOR OPCIÓN</div>
+                    <div class="plan-header">
+                        <span class="plan-name">PAREJA PERFECTO</span>
+                        <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 0.5rem;">Ahorro inteligente para disfrutar de a dos.</p>
+                    </div>
+                    <div class="price-box">
+                        <span class="amount">$105.000</span>
+                        <span class="currency">COP / mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> 3 Productos seleccionados</li>
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> Regalo sorpresa trimestral</li>
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> Envío Prioritario</li>
+                    </ul>
+                    <a href="checkout.html?plan=pareja" class="btn-action">Activar Ahorro</a>
+                </div>
+
+                <div class="pricing-card reveal delay-2">
+                    <div class="plan-header">
+                        <span class="plan-name">ESTUDIO OASIS</span>
+                        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem;">Para quienes buscan la máxima calidad al mejor precio.</p>
+                    </div>
+                    <div class="price-box">
+                        <span class="amount">$128.000</span>
+                        <span class="currency">COP / mes</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> Selección de alta gama</li>
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> Acceso a preventas</li>
+                        <li><i data-lucide="check" style="width: 14px; margin-right: 0.5rem; color: var(--oasis-gold);"></i> Soporte personalizado</li>
+                    </ul>
+                    <a href="checkout.html?plan=pro" class="btn-action">Activar Ahorro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo">OASIS CLUB</div>
+                    <p>La forma más elegante e inteligente de comprar bienestar en Colombia. Calidad que se nota, ahorro que se siente.</p>
+                </div>
+                <div class="footer-col" style="grid-column: span 2;">
+                    <h4>Legal</h4>
+                    <ul class="footer-legal-links">
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Envíos y Devoluciones</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Oasis Club Colombia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

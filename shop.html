@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Oasis | Selección Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- SIDEBAR CART -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button id="close-cart" class="close-btn"><i data-lucide="x"></i></button>
+        </div>
+        <div class="cart-items">
+            <p class="empty-msg">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0 COP</span>
+            </div>
+            <a href="checkout.html" class="btn-primary" style="width: 100%; text-align: center;">Finalizar Pedido</a>
+        </div>
+    </div>
+
+    <nav id="main-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">OASIS CLUB</a>
+                <div class="slogan-nav">BIENESTAR & ELEGANCIA</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="membership.html">Membresía</a></li>
+                <li><a href="#" class="cart-icon"><i data-lucide="shopping-bag" style="width: 20px;"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SHOP BANNER -->
+    <header class="shop-banner" style="background: var(--card-dark-grad); color: white; padding: 6rem 0; text-align: center;">
+        <div class="container">
+            <h1 style="font-family: var(--font-heading); font-size: 3.5rem;">La Boutique</h1>
+            <p style="opacity: 0.8; margin-top: 1rem;">Selección de calidad con la elegancia que mereces.</p>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="shop-layout" style="display: grid; grid-template-columns: 280px 1fr; gap: 4rem;">
+                <!-- SIDEBAR FILTROS AVANZADOS -->
+                <aside class="shop-filters">
+                    <!-- POR DESTINATARIO -->
+                    <div class="filter-group" style="margin-bottom: 3rem;">
+                        <h4 style="font-family: var(--font-heading); margin-bottom: 1.5rem; border-bottom: 2px solid var(--oasis-gold); display: inline-block; font-size: 0.8rem; letter-spacing: 2px;">DESTINATARIO</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem;"><a href="#" style="text-decoration: none; color: var(--oasis-purple); font-weight: 700; font-size: 0.85rem;">Para Ellas</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" style="text-decoration: none; color: #666; font-size: 0.85rem;">Para Ellos</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" style="text-decoration: none; color: #666; font-size: 0.85rem;">Parejas</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- POR CATEGORÍA -->
+                    <div class="filter-group" style="margin-bottom: 3rem;">
+                        <h4 style="font-family: var(--font-heading); margin-bottom: 1.5rem; border-bottom: 2px solid var(--oasis-gold); display: inline-block; font-size: 0.8rem; letter-spacing: 2px;">UNIVERSO OASIS</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.8rem;"><a href="#" style="text-decoration: none; color: #666; font-size: 0.85rem;">Combos y Regalos</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" style="text-decoration: none; color: #666; font-size: 0.85rem;">Lencería Premium</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" style="text-decoration: none; color: #666; font-size: 0.85rem;">BDSM y Fantasía</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" style="text-decoration: none; color: #666; font-size: 0.85rem;">Juegos de Mesa</a></li>
+                            <li style="margin-bottom: 0.8rem;"><a href="#" style="text-decoration: none; color: #666; font-size: 0.85rem;">Bienestar y Aromas</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- POR RANGO DE PRECIO -->
+                    <div class="filter-group">
+                        <h4 style="font-family: var(--font-heading); margin-bottom: 1.5rem; border-bottom: 2px solid var(--oasis-gold); display: inline-block; font-size: 0.8rem; letter-spacing: 2px;">PRESUPUESTO</h4>
+                        <div style="margin-top: 1rem;">
+                            <input type="range" style="width: 100%; accent-color: var(--oasis-purple);">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.7rem; margin-top: 0.5rem; color: #999; font-weight: 700;">
+                                <span>$40K</span>
+                                <span>$500K+</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- PRODUCT GRID -->
+                <div class="shop-content">
+                    <div class="product-grid" style="margin-top: 0;">
+                        <!-- Productos iniciales -->
+                        <div class="product-card">
+                            <div class="product-img" style="background-image: url('caja-oasis.png');"></div>
+                            <div class="product-info">
+                                <h3>Combo Placer Total</h3>
+                                <p class="price">$285.000 COP</p>
+                                <div class="product-btns">
+                                    <a href="#" class="btn-action btn-add-cart"><i data-lucide="shopping-cart" style="width: 14px;"></i> AÑADIR</a>
+                                    <a href="product-single.html" class="btn-outline"><i data-lucide="eye" style="width: 14px;"></i> DETALLE</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ... repetir productos ... -->
+                    </div>
+                    <div id="shop-sentinel" style="height: 50px;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo" style="margin-bottom: 1.5rem;">OASIS CLUB</div>
+                    <p style="font-size: 0.9rem; line-height: 1.8; opacity: 0.8; margin-bottom: 2rem;">
+                        La forma más elegante e inteligente de comprar bienestar en Colombia.
+                    </p>
+                    <div class="trust-icons" style="display: flex; gap: 1.5rem; opacity: 0.6;">
+                        <i data-lucide="shield-check" style="width: 18px;"></i>
+                        <i data-lucide="lock" style="width: 18px;"></i>
+                        <i data-lucide="truck" style="width: 18px;"></i>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Membresía</h4>
+                    <ul>
+                        <li><a href="membership.html">¿Cómo funciona?</a></li>
+                        <li><a href="membership.html#planes">Planes de Ahorro</a></li>
+                        <li><a href="membership.html">Beneficios Socios</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col" style="grid-column: span 2;">
+                    <h4>Legal</h4>
+                    <ul class="footer-legal-links">
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Envíos y Devoluciones</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Oasis Club Colombia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

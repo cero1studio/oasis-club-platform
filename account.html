@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta | Oasis Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: var(--bg-cream);">
+    <nav id="main-nav">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">OASIS CLUB</a>
+                <div class="slogan-nav">BIENESTAR & ELEGANCIA</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#boutique">Tienda</a></li>
+                <li><a href="#" class="btn-nav-accent">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="account-grid reveal">
+            <!-- MENÚ LATERAL -->
+            <aside class="account-nav">
+                <h3 style="font-family: var(--font-heading); margin-bottom: 1.5rem;">Mi Oasis</h3>
+                <ul>
+                    <li><a href="#" class="active">Panel Principal</a></li>
+                    <li><a href="#">Mi Suscripción</a></li>
+                    <li><a href="#">Mis Pedidos</a></li>
+                    <li><a href="#">Direcciones</a></li>
+                    <li><a href="#">Métodos de Pago</a></li>
+                </ul>
+            </aside>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="account-content">
+                <div class="subscription-card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <span class="subscription-status">ACTIVA</span>
+                            <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-top: 1rem;">Plan Pareja Perfecto</h2>
+                            <p style="opacity: 0.8; margin-top: 0.5rem;">Próximo envío: 15 de Mayo, 2026</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="font-size: 1.5rem; font-weight: 800;">$105.000</span>
+                            <p style="font-size: 0.8rem; opacity: 0.6;">COP / mes</p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <a href="#" class="btn-glass" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">Cambiar Plan</a>
+                        <a href="#" class="btn-glass" style="padding: 0.8rem 1.5rem; font-size: 0.8rem; border-color: rgba(255,255,255,0.2);">Pausar</a>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <h3 style="font-family: var(--font-heading); margin-bottom: 1.5rem;">Pedidos Recientes</h3>
+                    <div style="background: white; padding: 1.5rem; border-radius: 20px; border: 1px solid #eee;">
+                        <p style="color: #666; font-size: 0.9rem;">No tienes pedidos recientes en la boutique.</p>
+                        <a href="index.html#boutique" style="color: var(--oasis-gold); font-weight: 700; text-decoration: none; display: block; margin-top: 1rem;">Explorar la Boutique →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
