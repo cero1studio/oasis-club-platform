@@ -4,6 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartIcon = document.querySelector('.cart-icon');
     const reveals = document.querySelectorAll('.reveal');
 
+    // HAMBURGER MENU
+    const navHamburger = document.getElementById('nav-hamburger');
+    const navHamburgerClose = document.getElementById('nav-hamburger-close');
+    const navLinks = document.getElementById('nav-links');
+
+    if (navHamburger && navLinks) {
+        navHamburger.addEventListener('click', () => {
+            navLinks.classList.add('open');
+        });
+    }
+    if (navHamburgerClose && navLinks) {
+        navHamburgerClose.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+        });
+    }
+    // Close menu when a nav link is clicked
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('open'));
+        });
+    }
+
     // GLOBAL CLICK DELEGATION (Para elementos dinámicos)
     document.addEventListener('click', (e) => {
         const target = e.target.closest('.btn-add-cart, .cart-icon');
