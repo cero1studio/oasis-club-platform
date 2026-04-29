@@ -657,14 +657,11 @@ body { font-family: var(--font-body); background-color: var(--bg-cream); color: 
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 1000;
+    z-index: 1300;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--oasis-purple);
-}
-@media (max-width: 768px) {
-    .nav-hamburger-close { display: block; }
 }
 
 /* ============================================
@@ -839,6 +836,26 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
+    .nav-hamburger {
+        z-index: 1300;
+    }
+
+    body.menu-open .nav-hamburger {
+        display: none !important;
+    }
+
+    body.menu-open .nav-hamburger-close {
+        display: block !important;
+    }
+
+    .nav-links {
+        z-index: 1200 !important;
+    }
+
+    .nav-links.open {
+        display: flex !important;
+    }
+
     .hero-slider {
         height: auto;
         min-height: 86svh;
@@ -995,6 +1012,25 @@ body.menu-open {
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 }
 
+.home-categories-grid {
+    margin-top: 1.2rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+}
+
+.home-categories-grid a {
+    background: #fff;
+    border: 1px solid rgba(59, 7, 100, 0.15);
+    color: var(--oasis-purple);
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+}
+
 /* SHOP FILTERS RESPONSIVE SYSTEM */
 .shop-filters {
     background: #fff;
@@ -1097,7 +1133,8 @@ body.menu-open {
     }
 
     .pricing-grid {
-        padding: 1.5rem 2rem 2.4rem !important;
+        padding: 1.5rem 1rem 2.4rem 1.4rem !important;
+        margin-left: 0 !important;
     }
 
     .pricing-card {
@@ -1324,4 +1361,29 @@ body.menu-open {
         width: 10px !important;
         height: 10px !important;
     }
+
+    .home-categories-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.45rem;
+    }
+
+    .home-categories-grid a {
+        font-size: 0.58rem;
+        padding: 0.38rem 0.34rem;
+    }
+
+    .shop-cta .btn-outline {
+        padding: 0.65rem 1rem !important;
+        font-size: 0.62rem !important;
+        letter-spacing: 0.8px !important;
+    }
+}
+
+/* PRODUCT IMAGE RATIO IMPROVEMENT */
+.product-card .product-img {
+    aspect-ratio: 1 / 1;
+    height: auto !important;
+    width: 86%;
+    margin: 0.8rem auto 0;
+    border-radius: 14px;
 }

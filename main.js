@@ -42,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', closeMenu);
         });
+        navLinks.addEventListener('click', (e) => {
+            if (e.target === navLinks) closeMenu();
+        });
     }
 
     document.addEventListener('keydown', (e) => {
@@ -363,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mapProductToCard(product, index = 0) {
-        const productUrl = product.url || routeTo('product-single');
+        const productUrl = `${routeTo('product-single')}?product=${encodeURIComponent(product.id || '')}`;
         const imageUrl = product.image || 'caja-oasis.png';
         const title = product.name || 'Producto';
         const price = formatCop(product.price || 0);
@@ -408,6 +411,50 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (_error) {}
         }
         return [];
+    }
+
+    function renderSingleProductFromDataset(products) {
+        const isProductSingle = window.location.pathname.includes('product-single');
+        if (!isProductSingle || !Array.isArray(products) || products.length === 0) return;
+
+        const productId = new URLSearchParams(window.location.search).get('product');
+        const selected = products.find((p) => p.id === productId) || products[0];
+        if (!selected) return;
+
+        const titleEl = document.querySelector('.product-meta h1');
+        const priceEl = document.querySelector('.product-meta .price');
+        const descEl = document.querySelector('.product-description p');
+        const imageEl = document.querySelector('.product-gallery img');
+        const subtitleEl = document.querySelector('.product-meta .subtitle');
+        const buyBtn = document.querySelector('.action-area .btn-add-cart');
+        const detailCards = document.querySelectorAll('.section .product-grid .product-card');
+
+        if (titleEl) titleEl.textContent = selected.name || 'Producto';
+        if (priceEl) priceEl.textContent = `${formatCop(selected.price || 0)} COP`;
+        if (descEl) {
+            const copy = selected.description || 'Producto seleccionado de nuestra boutique.';
+            descEl.textContent = copy.length > 420 ? `${copy.slice(0, 417)}...` : copy;
+        }
+        if (imageEl) {
+            imageEl.src = selected.image || imageEl.src;
+            imageEl.alt = selected.name || imageEl.alt;
+        }
+        if (subtitleEl) subtitleEl.textContent = `Boutique / ${selected.brand || 'Selección Oasis'}`;
+        if (buyBtn) buyBtn.setAttribute('href', routeTo('checkout'));
+
+        if (detailCards.length > 0) {
+            const related = products.filter((p) => p.id !== selected.id).slice(0, detailCards.length);
+            detailCards.forEach((card, idx) => {
+                const rel = related[idx];
+                if (!rel) return;
+                const cImg = card.querySelector('.product-img');
+                const cTitle = card.querySelector('h3');
+                const cPrice = card.querySelector('.price, span.price');
+                if (cImg) cImg.style.backgroundImage = `url('${rel.image || ''}')`;
+                if (cTitle) cTitle.textContent = rel.name || 'Producto';
+                if (cPrice) cPrice.textContent = `${formatCop(rel.price || 0)} COP`;
+            });
+        }
     }
 
     function hydrateGridWithDemoProducts() {
@@ -496,6 +543,10 @@ document.addEventListener('DOMContentLoaded', () => {
             hydrateGridWithDemoProducts();
         });
     }
+
+    fetchDemoProducts().then((products) => {
+        renderSingleProductFromDataset(products);
+    });
 
     // La delegación de clics global arriba se encarga de esto ahora.
 
